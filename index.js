@@ -2,6 +2,7 @@ const express = require("express"); //importando o express
 const app = express(); // criando instância do express
 
 app.set('view engine', 'ejs'); //estou dizendo para o Express usar o EJS como view engine
+app.use(express.static('public'));
 
 app.get("/:nome/:lang", (req, res) => {
     var nome = req.params.nome;
