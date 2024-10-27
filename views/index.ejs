@@ -15,8 +15,17 @@
     <p>Empresa: <%= empresa %></p>
     <p>Inscritos no canal: <%= inscritos %></p>
 
-    
-    
+<% if (msg == true) { %>
+    <h3>Isso é ima msg de erro!</h3>
+<%} else { %>
+    <h3>Nenhum erro!</h3>
+<%}%>
+
+<% produtos.forEach(function(produto) { %>
+    <hr>
+    <h3><%= produto.nome %></h4>
+    <h4><%= produto.preco %></h4>
+<% }) %>
    
 </body>
 </html>
