@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Guia Perguntas</title>
-    
-</head>
+<%- include('./partials/header.ejs') %>
 <body>
-
-    <nav class="navbar navbar-light bg-primary">
-        <a class="navbar-brand ms-3"   href="/">
-            <img src="/img/guia.png" alt="">
-        </a>
-        
-    </nav>
-
-
+<%- include('./partials/navbar.ejs') %>
     <div class="container">
 
         <div class="card" id="formulario-pergunta">
@@ -27,21 +9,17 @@
             </div>
 
             <div class="card-body">
-                <form action="">
+                <form method="post" action="/salvarpergunta">
                     <label>Título</label>
-                    <input type="text" placeholder="Título" class="form-control">
+                    <input type="text" name="titulo" placeholder="Título" class="form-control" required>
                     <br>
                     <label>Descrição</label>
-                    <textarea placeholder="Descreva sua pergunta aqui." class="form-control"></textarea>
+                    <textarea name="descricao" placeholder="Descreva sua pergunta aqui." class="form-control" required></textarea>
                     <br>
                     <button class="btn btn-primary">Perguntar</button>
                 </form>
             </div>
         </div>
     </div>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
 </body>
-</html>
+<%- include('./partials/footer.ejs') %>
